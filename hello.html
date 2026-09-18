@@ -1,0 +1,4301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Little Love Story ❤️</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:
+        linear-gradient(135deg,#fff0f6,#ffe3ed,#ffd7e6);
+    color:#5b3043;
+    overflow-x:hidden;
+    width:100%;
+    min-height:100%;
+}
+
+
+/* =====================================================
+   BUTTON / TOUCH FIX
+===================================================== */
+
+button{
+    font-family:inherit;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:manipulation;
+    cursor:pointer;
+    position:relative;
+    z-index:1000;
+}
+
+button:focus{
+    outline:none;
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    z-index:1;
+    pointer-events:none;
+    animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:
+            translateY(0)
+            scale(.4)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            scale(1.4)
+            rotate(360deg);
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle{
+    position:fixed;
+    pointer-events:none;
+    z-index:999;
+    animation:sparkle .9s ease-out forwards;
+}
+
+@keyframes sparkle{
+
+    0%{
+        transform:scale(0) rotate(0);
+        opacity:0;
+    }
+
+    40%{
+        transform:scale(1.5) rotate(90deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(0) rotate(180deg);
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+    min-height:100dvh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    position:relative;
+
+    z-index:5;
+}
+
+
+.hero-box{
+
+    max-width:700px;
+
+    padding:55px 30px;
+
+    border-radius:40px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(150,40,80,.18);
+
+    border:
+        2px solid rgba(255,255,255,.9);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.hero-heart{
+
+    font-size:55px;
+
+    animation:heartbeat 1.5s infinite;
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+}
+
+
+.hero h1{
+
+    font-family:Georgia,serif;
+
+    color:#d93669;
+
+    font-size:52px;
+
+    margin:15px 0;
+
+}
+
+
+.hero h2{
+
+    font-size:21px;
+
+    font-weight:400;
+
+}
+
+
+.hero p{
+
+    margin-top:20px;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+.main-btn{
+
+    margin-top:30px;
+
+    padding:16px 32px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(135deg,#ef4f82,#cc285d);
+
+    color:white;
+
+    font-size:17px;
+
+    box-shadow:
+        0 10px 25px rgba(200,40,90,.25);
+
+    transition:.3s;
+
+    min-height:50px;
+
+    pointer-events:auto;
+
+}
+
+
+.main-btn:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+section{
+
+    padding:90px 0;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+.title{
+
+    font-family:Georgia,serif;
+
+    font-size:39px;
+
+    color:#d93669;
+
+    margin-bottom:12px;
+
+}
+
+
+.subtitle{
+
+    margin-bottom:45px;
+
+    color:#805267;
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro-box{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:35px 25px;
+
+    background:white;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 12px 35px rgba(130,40,80,.12);
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+/* =====================================================
+   GIFT MEMORY BOX
+===================================================== */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+
+.gift-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:15px;
+
+    box-shadow:
+        0 12px 30px rgba(130,40,80,.14);
+
+    transition:.4s;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.gift-card:hover{
+
+    transform:
+        translateY(-8px)
+        rotate(1deg);
+
+}
+
+
+.photo-frame{
+
+    height:300px;
+
+    border-radius:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fc0,
+            #f45f91
+        );
+
+    border:4px solid white;
+
+    z-index:10;
+
+    touch-action:manipulation;
+
+}
+
+
+.gift-cover{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f05b8d,
+            #c9275d
+        );
+
+    transition:
+        transform .8s cubic-bezier(.7,-.1,.3,1.2);
+
+    pointer-events:auto;
+
+}
+
+
+.gift{
+
+    font-size:60px;
+
+    animation:giftPulse 1.5s infinite;
+
+}
+
+
+@keyframes giftPulse{
+
+    0%,100%{
+        transform:scale(1) rotate(0);
+    }
+
+    50%{
+        transform:scale(1.12) rotate(-4deg);
+    }
+
+}
+
+
+.gift-cover p{
+
+    margin-top:12px;
+
+}
+
+
+.photo-frame.revealed
+.gift-cover{
+
+    transform:translateY(-100%);
+
+    pointer-events:none;
+
+}
+
+
+.photo-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transform:scale(.65);
+
+    transition:.8s;
+
+}
+
+
+.photo-frame.revealed img{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+.photo-caption{
+
+    padding:15px 5px 5px;
+
+    font-family:Georgia,serif;
+
+    color:#d93669;
+
+    font-size:18px;
+
+}
+
+
+/* =====================================================
+   DO YOU REMEMBER
+===================================================== */
+
+.remember-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:22px;
+
+}
+
+
+.remember-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:28px;
+
+    box-shadow:
+        0 10px 30px rgba(130,40,80,.11);
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    position:relative;
+
+    z-index:10;
+
+    touch-action:manipulation;
+
+}
+
+
+.remember-card:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+.remember-question{
+
+    font-size:22px;
+
+    color:#d93669;
+
+    margin-bottom:15px;
+
+}
+
+
+.remember-answer{
+
+    display:none;
+
+    line-height:1.7;
+
+}
+
+
+.remember-card.open
+.remember-answer{
+
+    display:block;
+
+}
+
+
+.remember-card.open
+.remember-question{
+
+    display:none;
+
+}
+
+
+/* =====================================================
+   LOVE NOTES
+===================================================== */
+
+.notes{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap:22px;
+
+}
+
+
+.note{
+
+    background:white;
+
+    padding:30px 22px;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 10px 28px rgba(130,40,80,.1);
+
+    transition:.3s;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.note:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.note-icon{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+
+.note h3{
+
+    color:#d93669;
+
+    margin-bottom:10px;
+
+}
+
+
+.note p{
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+
+    max-width:800px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:#ed94b1;
+
+    transform:translateX(-50%);
+
+}
+
+
+.timeline-item{
+
+    width:50%;
+
+    padding:20px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.timeline-item:nth-child(odd){
+
+    text-align:right;
+
+    padding-right:45px;
+
+}
+
+
+.timeline-item:nth-child(even){
+
+    margin-left:50%;
+
+    padding-left:45px;
+
+}
+
+
+.timeline-dot{
+
+    position:absolute;
+
+    top:30px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#e83e75;
+
+    border:4px solid #ffd9e6;
+
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-dot{
+
+    right:-10px;
+
+}
+
+
+.timeline-item:nth-child(even)
+.timeline-dot{
+
+    left:-10px;
+
+}
+
+
+.timeline-box{
+
+    background:white;
+
+    padding:23px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 8px 25px rgba(130,40,80,.1);
+
+}
+
+
+.timeline-box h3{
+
+    color:#d93669;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =====================================================
+   LOVE METER
+===================================================== */
+
+.love-meter{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px 25px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 12px 35px rgba(130,40,80,.13);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.meter{
+
+    width:100%;
+
+    height:30px;
+
+    background:#ffe0ea;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:25px 0;
+
+}
+
+
+.meter-fill{
+
+    height:100%;
+
+    width:0%;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff83aa,
+            #d93669
+        );
+
+    transition:2.5s;
+
+}
+
+
+.meter-text{
+
+    font-size:24px;
+
+    color:#d93669;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   LOVE QUESTION
+===================================================== */
+
+.question{
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding:40px 25px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 12px 35px rgba(130,40,80,.14);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.question h2{
+
+    font-family:Georgia,serif;
+
+    color:#d93669;
+
+    margin-bottom:25px;
+
+}
+
+
+.answers{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    position:relative;
+
+    z-index:100;
+
+}
+
+
+.answer-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    min-height:50px;
+
+    pointer-events:auto;
+
+}
+
+
+.yes{
+
+    background:#e83e75;
+
+    color:white;
+
+}
+
+
+.no{
+
+    background:#ffe1eb;
+
+    color:#8b4963;
+
+    transition:transform .25s ease;
+
+}
+
+
+/* =====================================================
+   ANSWER RESULT
+===================================================== */
+
+.answer-result{
+
+    margin-top:25px;
+
+    min-height:30px;
+
+    color:#d93669;
+
+    font-weight:bold;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+/* =====================================================
+   SECRET LETTER
+===================================================== */
+
+.envelope{
+
+    max-width:700px;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:10;
+
+    touch-action:manipulation;
+
+}
+
+
+.envelope-top{
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed5a8a,
+            #c9275d
+        );
+
+    color:white;
+
+    border-radius:
+        25px 25px 8px 8px;
+
+    font-size:21px;
+
+    box-shadow:
+        0 10px 25px rgba(130,40,80,.15);
+
+}
+
+
+.letter{
+
+    background:#fffdf8;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    padding:0 25px;
+
+    transition:
+        max-height 1s ease,
+        opacity .8s ease,
+        padding .8s ease;
+
+    border-radius:
+        8px 8px 25px 25px;
+
+    box-shadow:
+        0 15px 35px rgba(130,40,80,.12);
+
+}
+
+
+.envelope.open
+.letter{
+
+    max-height:1500px;
+
+    opacity:1;
+
+    padding:35px 25px;
+
+}
+
+
+.letter h2{
+
+    font-family:Georgia,serif;
+
+    color:#d93669;
+
+    margin-bottom:20px;
+
+}
+
+
+.letter p{
+
+    line-height:2;
+
+    font-size:17px;
+
+}
+
+
+/* =====================================================
+   FINAL SURPRISE
+===================================================== */
+
+.final{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.final-box{
+
+    max-width:750px;
+
+    padding:55px 25px;
+
+    border-radius:40px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    box-shadow:
+        0 25px 70px rgba(130,40,80,.18);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.final-heart{
+
+    font-size:75px;
+
+    animation:heartbeat 1.5s infinite;
+
+}
+
+
+.final-box h2{
+
+    font-family:Georgia,serif;
+
+    font-size:42px;
+
+    color:#d93669;
+
+    margin:20px 0;
+
+}
+
+
+.final-box p{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    color:#8e5068;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width:650px){
+
+    html,
+    body{
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow-x:hidden;
+
+    }
+
+
+    .hero{
+
+        min-height:100dvh;
+
+        min-height:100vh;
+
+        padding:14px 10px;
+
+    }
+
+
+    .hero-box{
+
+        width:100%;
+
+        max-width:430px;
+
+        padding:38px 18px;
+
+        border-radius:28px;
+
+    }
+
+
+    .hero-heart{
+
+        font-size:46px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:clamp(30px,9vw,40px);
+
+        line-height:1.15;
+
+    }
+
+
+    .hero h2{
+
+        font-size:clamp(16px,4.5vw,19px);
+
+        line-height:1.5;
+
+    }
+
+
+    .hero p{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+
+    .main-btn{
+
+        width:100%;
+
+        max-width:310px;
+
+        min-height:52px;
+
+        padding:14px 20px;
+
+        font-size:16px;
+
+        z-index:10000;
+
+    }
+
+
+    .container{
+
+        width:100%;
+
+        padding:0 10px;
+
+    }
+
+
+    section{
+
+        width:100%;
+
+        padding:55px 0;
+
+    }
+
+
+    .title{
+
+        font-size:clamp(26px,7.5vw,32px);
+
+        line-height:1.25;
+
+        padding:0 6px;
+
+    }
+
+
+    .subtitle{
+
+        font-size:14px;
+
+        line-height:1.65;
+
+        padding:0 8px;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .intro-box{
+
+        width:100%;
+
+        padding:25px 17px;
+
+        border-radius:22px;
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+
+    .memory-grid,
+    .remember-grid,
+    .notes{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+    .gift-card,
+    .remember-card,
+    .note{
+
+        width:100%;
+
+        max-width:430px;
+
+        margin:auto;
+
+    }
+
+
+    .gift-card{
+
+        padding:9px;
+
+        border-radius:22px;
+
+    }
+
+
+    .photo-frame{
+
+        width:100%;
+
+        height:auto;
+
+        aspect-ratio:4 / 5;
+
+        min-height:230px;
+
+        max-height:420px;
+
+    }
+
+
+    .gift{
+
+        font-size:48px;
+
+    }
+
+
+    .gift-cover{
+
+        padding:14px;
+
+        text-align:center;
+
+    }
+
+
+    .gift-cover p{
+
+        font-size:15px;
+
+        line-height:1.5;
+
+    }
+
+
+    .photo-caption{
+
+        font-size:17px;
+
+        line-height:1.5;
+
+        padding:13px 4px 5px;
+
+    }
+
+
+    .remember-card{
+
+        padding:22px 17px;
+
+        border-radius:21px;
+
+    }
+
+
+    .remember-question{
+
+        font-size:19px;
+
+        line-height:1.45;
+
+    }
+
+
+    .remember-answer,
+    .note p{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+
+    .note{
+
+        padding:24px 17px;
+
+        border-radius:21px;
+
+    }
+
+
+    .note-icon{
+
+        font-size:38px;
+
+    }
+
+
+    /* MOBILE TIMELINE */
+
+    .timeline{
+
+        width:100%;
+
+        padding:0;
+
+    }
+
+
+    .timeline::before{
+
+        left:10px;
+
+        width:3px;
+
+        transform:none;
+
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd){
+
+        width:100%;
+
+        margin-left:0;
+
+        text-align:left;
+
+        padding:15px 0 15px 35px;
+
+    }
+
+
+    .timeline-item:nth-child(odd){
+
+        text-align:left;
+
+    }
+
+
+    .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot{
+
+        left:1px;
+
+        right:auto;
+
+        top:27px;
+
+        width:19px;
+
+        height:19px;
+
+    }
+
+
+    .timeline-box{
+
+        width:100%;
+
+        padding:19px 15px;
+
+        border-radius:18px;
+
+    }
+
+
+    .timeline-box h3{
+
+        font-size:17px;
+
+        line-height:1.4;
+
+    }
+
+
+    .timeline-box p{
+
+        font-size:14px;
+
+        line-height:1.7;
+
+    }
+
+
+    .love-meter{
+
+        width:100%;
+
+        padding:27px 16px;
+
+        border-radius:24px;
+
+    }
+
+
+    .meter{
+
+        height:25px;
+
+        margin:22px 0;
+
+    }
+
+
+    .meter-text{
+
+        font-size:21px;
+
+    }
+
+
+    .question{
+
+        width:100%;
+
+        padding:28px 16px;
+
+        border-radius:25px;
+
+    }
+
+
+    .question h2{
+
+        font-size:clamp(23px,6vw,29px);
+
+        line-height:1.35;
+
+    }
+
+
+    .question p{
+
+        font-size:15px;
+
+        line-height:1.65;
+
+    }
+
+
+    .answers{
+
+        width:100%;
+
+        gap:12px;
+
+    }
+
+
+    .answer-btn{
+
+        min-height:50px;
+
+        padding:13px 22px;
+
+        font-size:15px;
+
+        touch-action:manipulation;
+
+        z-index:10000;
+
+    }
+
+
+    .envelope{
+
+        width:100%;
+
+        max-width:100%;
+
+    }
+
+
+    .envelope-top{
+
+        padding:20px 14px;
+
+        font-size:17px;
+
+        line-height:1.5;
+
+    }
+
+
+    .envelope.open .letter{
+
+        max-height:1600px;
+
+        padding:27px 16px;
+
+    }
+
+
+    .letter h2{
+
+        font-size:25px;
+
+        line-height:1.3;
+
+    }
+
+
+    .letter p{
+
+        font-size:15px;
+
+        line-height:1.9;
+
+        overflow-wrap:anywhere;
+
+    }
+
+
+    .final{
+
+        min-height:75vh;
+
+        padding:45px 0;
+
+    }
+
+
+    .final-box{
+
+        width:100%;
+
+        padding:38px 16px;
+
+        border-radius:28px;
+
+    }
+
+
+    .final-heart{
+
+        font-size:60px;
+
+    }
+
+
+    .final-box h2{
+
+        font-size:clamp(27px,7.5vw,34px);
+
+        line-height:1.3;
+
+    }
+
+
+    .final-box p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+
+    footer{
+
+        padding:28px 12px;
+
+        font-size:13px;
+
+        line-height:1.6;
+
+    }
+
+
+    #finalMessage{
+
+        padding:
+            max(12px,env(safe-area-inset-top))
+            10px
+            max(12px,env(safe-area-inset-bottom));
+
+        overflow-y:auto;
+
+        -webkit-overflow-scrolling:touch;
+
+    }
+
+
+    #finalMessage > div{
+
+        width:100%;
+
+        max-width:400px;
+
+        max-height:90dvh;
+
+        max-height:90vh;
+
+        overflow-y:auto;
+
+        -webkit-overflow-scrolling:touch;
+
+        padding:35px 17px;
+
+        border-radius:25px;
+
+    }
+
+
+    #finalMessage > div > div:first-child{
+
+        font-size:55px !important;
+
+    }
+
+
+    #finalMessage h1{
+
+        font-size:clamp(25px,7vw,32px);
+
+        line-height:1.3;
+
+    }
+
+
+    #finalMessage p{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+        overflow-wrap:anywhere;
+
+    }
+
+
+    #finalMessage button{
+
+        min-height:50px;
+
+        padding:12px 25px;
+
+        font-size:15px;
+
+        width:auto;
+
+        min-width:130px;
+
+        z-index:100000;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width:480px){
+
+    .hero{
+
+        padding:10px 7px;
+
+    }
+
+
+    .hero-box{
+
+        padding:31px 15px;
+
+        border-radius:24px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:31px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:16px;
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+
+    .container{
+
+        padding:0 8px;
+
+    }
+
+
+    section{
+
+        padding:48px 0;
+
+    }
+
+
+    .title{
+
+        font-size:26px;
+
+    }
+
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+
+    .photo-frame{
+
+        min-height:210px;
+
+    }
+
+
+    .gift{
+
+        font-size:44px;
+
+    }
+
+
+    .gift-cover p{
+
+        font-size:14px;
+
+    }
+
+
+    .gift-cover small{
+
+        font-size:12px;
+
+    }
+
+
+    .remember-card,
+    .note{
+
+        padding:20px 15px;
+
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd){
+
+        padding-left:31px;
+
+    }
+
+
+    .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot{
+
+        width:17px;
+
+        height:17px;
+
+        left:2px;
+
+    }
+
+
+    .timeline-box{
+
+        padding:17px 14px;
+
+    }
+
+
+    .love-meter,
+    .question{
+
+        padding:24px 14px;
+
+    }
+
+
+    .answers{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .answer-btn{
+
+        width:100%;
+
+        flex:none;
+
+    }
+
+
+    .letter p{
+
+        font-size:14px;
+
+    }
+
+
+    .final-box{
+
+        padding:31px 14px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width:360px){
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+
+    .hero-box{
+
+        padding:27px 12px;
+
+    }
+
+
+    .title{
+
+        font-size:24px;
+
+    }
+
+
+    .photo-frame{
+
+        min-height:195px;
+
+    }
+
+
+    .timeline-box h3{
+
+        font-size:16px;
+
+    }
+
+
+    .timeline-box p{
+
+        font-size:13px;
+
+    }
+
+
+    .main-btn{
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<div class="hero-heart">
+❤️
+</div>
+
+<h1>
+Hey, My Love...
+</h1>
+
+<h2>
+I made a tiny little world just for you. 💕
+</h2>
+
+<p>
+
+It's filled with memories,
+little secrets,
+silly moments,
+and a whole lot of love.
+
+<br>
+
+So take my hand...
+
+<br>
+
+and let's open our little treasure box. 🎁
+
+</p>
+
+<button
+type="button"
+class="main-btn"
+id="openStoryButton">
+
+💌 Open My Heart
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section id="story">
+
+<h2 class="title">
+Welcome To Our Love Treasure Box 🎁
+</h2>
+
+<p class="subtitle">
+Warning: Contains excessive amounts of love. ❤️
+</p>
+
+
+<div class="intro-box">
+
+<p>
+
+Some people collect expensive things.
+
+Some collect watches,
+shoes,
+cars...
+
+<br><br>
+
+But me?
+
+<br>
+
+I collect moments with you.
+
+<br><br>
+
+Every laugh.
+Every conversation.
+Every silly picture.
+Every little memory.
+
+<br><br>
+
+Because one day,
+those little moments will become
+the stories we tell again and again.
+
+<br><br>
+
+<strong>
+And this little website is my way of keeping them safe. ❤️
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GIFT BOX MEMORIES
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+🎁 Open Our Little Gifts
+</h2>
+
+<p class="subtitle">
+Every box has a memory hiding inside. Tap to open it. 💕
+</p>
+
+
+<div class="memory-grid">
+
+
+<!-- MEMORY 1 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🫶
+</div>
+
+<p>
+two cuties in one frame...
+</p>
+
+
+<small>
+Tap to open ❤️
+</small>
+
+</div>
+
+<img
+    src="Static/images/image.jpeg"
+    alt="Memory 1">
+
+</div>
+
+<div class="photo-caption">
+These kids are going to be forever... 🥰
+</div>
+
+</div>
+
+
+
+<!-- MEMORY 2 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+💋
+</div>
+
+<p>
+Do you remember this?
+</p>
+
+<small>
+Tap to open 💗
+</small>
+
+</div>
+
+<img
+src="Static/images/image1.jpeg"
+alt="Memory 2">
+
+</div>
+
+<div class="photo-caption">
+One of my favourite memories. ❤️
+</div>
+
+</div>
+
+
+
+<!-- MEMORY 3 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🩷
+</div>
+
+<p>
+A secret memory...
+</p>
+
+<small>
+Tap to open 💕
+</small>
+
+</div>
+
+<img
+src="Static/images/image2.jpeg"
+alt="Memory 3">
+
+</div>
+
+<div class="photo-caption">
+Us being our silly selves. 😂
+</div>
+
+</div>
+
+
+
+<!-- MEMORY 4 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🥰
+</div>
+
+<p>
+One more treasure...
+</p>
+
+<small>
+Tap to open 🥹
+</small>
+
+</div>
+
+<img
+src="Static/images/image3.jpeg"
+alt="Memory 4">
+
+</div>
+
+<div class="photo-caption">
+A moment I'd happily relive. 💗
+</div>
+
+</div>
+
+
+<!-- MEMORY 5 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+😋
+</div>
+
+<p>
+One more treasure...
+</p>
+
+<small>
+Tap to open 🥹
+</small>
+
+</div>
+
+<img
+src="Static/images/image3.jpeg"
+alt="Memory 4">
+
+</div>
+
+<div class="photo-caption">
+A moment I'd happily relive. 💗
+</div>
+
+</div>
+
+
+<!-- MEMORY 6 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🎀
+</div>
+
+<p>
+Do you remember this?
+</p>
+
+<small>
+Tap to open 💗
+</small>
+
+</div>
+
+<img
+src="Static/images/image1.jpeg"
+alt="Memory 2">
+
+</div>
+
+<div class="photo-caption">
+One of my favourite memories. ❤️
+</div>
+
+</div>
+
+
+<!-- MEMORY 7 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+💌
+</div>
+
+<p>
+A secret memory...
+</p>
+
+<small>
+Tap to open 💕
+</small>
+
+</div>
+
+<img
+src="Static/images/image2.jpeg"
+alt="Memory 3">
+
+</div>
+
+<div class="photo-caption">
+Us being our silly selves. 😂
+</div>
+
+</div>
+
+<!-- MEMORY 8 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🧿
+</div>
+
+<p>
+One more treasure...
+</p>
+
+<small>
+Tap to open 🥹
+</small>
+
+</div>
+
+<img
+src="Static/images/image3.jpeg"
+alt="Memory 4">
+
+</div>
+
+<div class="photo-caption">
+A moment I'd happily relive. 💗
+</div>
+
+</div>
+
+<!-- MEMORY 9 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+🤞
+</div>
+
+<p>
+A little memory for you...
+</p>
+
+
+<small>
+Tap to open ❤️
+</small>
+
+</div>
+
+<img
+    src="Static/images/image.jpeg"
+    alt="Memory 1">
+
+</div>
+
+<div class="photo-caption">
+That beautiful moment... 🥰
+</div>
+
+</div>
+
+<!-- MEMORY 10 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+♾️
+</div>
+
+<p>
+A little memory for you...
+</p>
+
+
+<small>
+Tap to open ❤️
+</small>
+
+</div>
+
+<img
+    src="Static/images/image.jpeg"
+    alt="Memory 1">
+
+</div>
+
+<div class="photo-caption">
+That beautiful moment... 🥰
+</div>
+
+</div>
+
+<!-- MEMORY 11 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+😚
+</div>
+
+<p>
+A little memory for you...
+</p>
+
+
+<small>
+Tap to open ❤️
+</small>
+
+</div>
+
+<img
+    src="Static/images/image.jpeg"
+    alt="Memory 1">
+
+</div>
+
+<div class="photo-caption">
+That beautiful moment... 🥰
+</div>
+
+</div>
+
+<!-- MEMORY 12 -->
+
+<div class="gift-card">
+
+<div
+class="photo-frame"
+data-action="photo">
+
+<div class="gift-cover">
+
+<div class="gift">
+😘
+</div>
+
+<p>
+A little memory for you...
+</p>
+
+
+<small>
+Tap to open ❤️
+</small>
+
+</div>
+
+<img
+    src="Static/images/image.jpeg"
+    alt="Memory 1">
+
+</div>
+
+<div class="photo-caption">
+That beautiful moment... 🥰
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DO YOU REMEMBER
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+💭 Do You Remember This?
+</h2>
+
+<p class="subtitle">
+Tap a memory card to discover what's behind it.
+</p>
+
+
+<div class="remember-grid">
+
+
+<div
+class="remember-card"
+data-action="remember">
+
+<div class="remember-question">
+💭 Remember when we first started talking?
+</div>
+
+<div class="remember-answer">
+
+Maybe we didn't know it at the time...
+
+but that little conversation
+would become the beginning of
+so many beautiful memories. ❤️
+
+</div>
+
+</div>
+
+
+
+<div
+class="remember-card"
+data-action="remember">
+
+<div class="remember-question">
+😂 Remember our stupid jokes?
+</div>
+
+<div class="remember-answer">
+
+The jokes weren't even funny...
+
+but somehow we laughed like
+they were the funniest things
+ever invented. 😂❤️
+
+</div>
+
+</div>
+
+
+
+<div
+class="remember-card"
+data-action="remember">
+
+<div class="remember-question">
+🥹 Remember the little moments?
+</div>
+
+<div class="remember-answer">
+
+The random calls.
+
+The unexpected messages.
+
+The tiny surprises.
+
+Those are actually some
+of my favourite memories.
+
+</div>
+
+
+
+
+</section>
+
+
+
+<!-- =====================================================
+     LOVE NOTES
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+🥰 Tiny Love Notes
+</h2>
+
+<p class="subtitle">
+Things I might not say every day...
+</p>
+
+
+<div class="notes">
+
+
+<div class="note"> <!-- 1 -->
+
+<div class="note-icon">
+❤️
+</div>
+
+<h3>
+You Are Special
+</h3>
+
+<p>
+There are millions of people in this world,
+but somehow you became my favourite one.
+</p>
+
+</div>
+
+
+
+<div class="note"> <!-- 2 -->
+
+<div class="note-icon">
+🤗
+</div>
+
+<h3>
+Your Hugs
+</h3>
+
+<p>
+A hug from you somehow makes everything
+feel a little less difficult.
+</p>
+
+</div>
+
+
+
+<div class="note"> <!-- 3 -->
+
+<div class="note-icon">
+😂
+</div>
+
+<h3>
+Your Weirdness
+</h3>
+
+<p>
+Please never become normal.
+Your weird little personality is adorable.
+</p>
+
+</div>
+
+
+
+<div class="note"> <!-- 4 -->
+
+<div class="note-icon">
+🌙
+</div>
+
+<h3>
+My Favourite Thought
+</h3>
+
+<p>
+No matter how busy the day gets,
+somewhere in my mind there's always you.
+</p>
+
+</div>
+
+
+
+<div class="note"> <!-- 5 -->
+
+<div class="note-icon">
+🫶
+</div>
+
+<h3>
+Thank You
+</h3>
+
+<p>
+Thank you for being there,
+for listening,
+and for simply being yourself.
+</p>
+
+</div>
+
+
+
+<div class="note"> <!-- 6 -->
+
+<div class="note-icon">
+🤫
+</div>
+
+<h3>
+One Little Secret
+</h3>
+
+<p>
+If I had to choose my favourite notification...
+
+it would probably be your name.
+</p>
+
+</div>
+
+<div class="note"> <!-- 7 -->
+
+<div class="note-icon">
+💋
+</div>
+
+<h3>
+your kisses 
+</h3>
+
+<p>
+Your kisses feel like my favorite kind of comfort.
+They make everything around me go quiet for a moment.
+There’s something so warm and special about them
+</p>
+
+</div>
+
+<div class="note"> <!-- 8 -->
+
+<div class="note-icon">
+♾️
+</div>
+
+<h3>
+My home 
+</h3>
+
+<p>
+You are my home, not a place but a feeling.
+With you, I feel safe, understood, and completely myself.
+No matter how far I go, my heart always finds its way back to you.
+Because home has always been you. ❤️
+</p>
+
+</div>
+
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+🎀 Our Little Timeline
+</h2>
+
+<p class="subtitle">
+A few chapters of our story...
+</p>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-box">
+
+<h3>
+🌸 The Beginning
+</h3>
+
+<p>
+Two people met...
+
+and somehow started becoming
+something special to each other.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-box">
+
+<h3>
+💬 The Conversations
+</h3>
+
+<p>
+One conversation became another,
+then another...
+
+and suddenly talking to you
+became my favourite part of the day.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-box">
+
+<h3>
+😂 The Laughs
+</h3>
+
+<p>
+The silly jokes,
+random conversations,
+teasing,
+and countless laughs.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-box">
+
+<h3>
+❤️ The Memories
+</h3>
+
+<p>
+Photos, adventures,
+little surprises,
+and moments worth keeping forever.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-box">
+
+<h3>
+♾️ To Be Continued...
+</h3>
+
+<p>
+Our story isn't finished.
+
+There are still so many memories
+waiting for us.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOVE METER
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+💗 The Official Love Meter
+</h2>
+
+<p class="subtitle">
+Let's see how much love is hiding in my heart...
+</p>
+
+
+<div class="love-meter">
+
+<p>
+Calculating...
+</p>
+
+
+<div class="meter">
+
+<div
+class="meter-fill"
+id="loveFill">
+
+</div>
+
+</div>
+
+
+<div
+class="meter-text"
+id="loveText">
+
+0%
+
+</div>
+
+
+<br>
+
+
+<button
+type="button"
+class="main-btn"
+id="loveMeterButton">
+
+Calculate ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DO YOU LOVE ME
+===================================================== -->
+
+<section>
+
+<div class="question">
+
+<h2>
+😘 Okay... One Very Important Question
+</h2>
+
+<p style="margin-bottom:25px;">
+
+Do you love me? 🥺❤️
+
+</p>
+
+
+<div class="answers">
+
+<button
+type="button"
+class="answer-btn yes"
+id="yesButton">
+
+YES ❤️
+
+</button>
+
+
+<button
+type="button"
+class="answer-btn no"
+id="noButton">
+
+NO 😭
+
+</button>
+
+</div>
+
+
+<div
+class="answer-result"
+id="answerResult">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECRET LETTER
+===================================================== -->
+
+<section>
+
+<h2 class="title">
+💌 A Secret Letter
+</h2>
+
+<p class="subtitle">
+I saved this one especially for you.
+</p>
+
+
+<div
+class="envelope"
+id="envelope">
+
+<div class="envelope-top">
+
+💌 Tap Here To Open My Heart
+
+</div>
+
+
+<div class="letter">
+
+<h2>
+Dear My Love,
+</h2>
+
+<p>
+
+I don't always know how to put everything
+I feel into words...
+
+but I'll try.
+
+<br><br>
+
+You have become such a beautiful part
+of my life.
+
+<br><br>
+
+Thank you for every conversation,
+every laugh,
+every silly moment,
+every little surprise,
+and every memory.
+
+<br><br>
+
+I don't want only the big moments.
+
+I want the tiny ones too.
+
+The random messages.
+
+The sleepy conversations.
+
+The silly arguments.
+
+The food discussions.
+
+The "what should we do today?"
+
+The moments where we're doing absolutely
+nothing but still enjoying being together.
+
+<br><br>
+
+Because with the right person...
+
+even ordinary moments become memories.
+
+<br><br>
+
+And if I could make one wish,
+it would be simple:
+
+<br><br>
+
+<strong>
+I want many more chapters with you. ❤️
+</strong>
+
+<br><br>
+
+More photos.
+
+More adventures.
+
+More laughs.
+
+More hugs.
+
+More stupid jokes.
+
+More memories.
+
+More us.
+
+<br><br>
+
+So thank you...
+
+for being you.
+
+<br><br>
+
+<strong>
+You are one of my favourite people,
+one of my favourite memories,
+and one of my favourite reasons to smile.
+
+❤️
+
+</strong>
+
+<br><br>
+
+Always yours. 💕
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL SURPRISE
+===================================================== -->
+
+<section class="final">
+
+<div class="final-box">
+
+<div class="final-heart">
+💖
+</div>
+
+<h2>
+One Last Surprise...
+</h2>
+
+<p>
+
+You've opened the memories.
+
+<br>
+
+You've read the little notes.
+
+<br>
+
+You've survived the love meter.
+
+<br>
+
+You've answered the important question.
+
+<br><br>
+
+But there's one thing left...
+
+<br><br>
+
+<strong>
+Our story isn't finished. ❤️
+</strong>
+
+<br><br>
+
+There are still places we haven't visited,
+photos we haven't taken,
+jokes we haven't laughed at,
+and memories we haven't created.
+
+<br><br>
+
+So let's keep making them.
+
+<br><br>
+
+One day.
+One laugh.
+One hug.
+One memory at a time.
+
+<br><br>
+
+<strong>
+I love you. ❤️
+</strong>
+
+</p>
+
+
+<button
+type="button"
+class="main-btn"
+id="finalSurpriseButton">
+
+🎉 Open The Final Surprise 🎉
+
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+Made with every bit of ❤️ I could put into a webpage.
+
+<br><br>
+
+For my favourite person. 💕
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   OPEN STORY
+===================================================== */
+
+function openStory(){
+
+    const story =
+        document.getElementById("story");
+
+    if(story){
+
+        story.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+    createHeartExplosion();
+
+}
+
+
+/* =====================================================
+   PHOTO REVEAL
+===================================================== */
+
+function revealPhoto(frame){
+
+    if(!frame){
+        return;
+    }
+
+    frame.classList.toggle("revealed");
+
+    createSparkles(frame);
+
+}
+
+
+/* =====================================================
+   REMEMBER CARD
+===================================================== */
+
+function openRemember(card){
+
+    if(!card){
+        return;
+    }
+
+    card.classList.toggle("open");
+
+    createSparkles(card);
+
+}
+
+
+/* =====================================================
+   LOVE METER
+===================================================== */
+
+let loveMeterRunning = false;
+
+function startLoveMeter(){
+
+    if(loveMeterRunning){
+        return;
+    }
+
+    const fill =
+        document.getElementById("loveFill");
+
+    const text =
+        document.getElementById("loveText");
+
+    if(!fill || !text){
+        return;
+    }
+
+    loveMeterRunning = true;
+
+    let value = 0;
+
+    fill.style.width = "0%";
+
+    text.innerHTML = "0%";
+
+    const timer = setInterval(()=>{
+
+        value++;
+
+        fill.style.width =
+            value + "%";
+
+        text.innerHTML =
+            value + "% ❤️";
+
+        if(value >= 100){
+
+            clearInterval(timer);
+
+            setTimeout(()=>{
+
+                text.innerHTML =
+                    "∞ TOO MUCH LOVE ❤️";
+
+                loveMeterRunning = false;
+
+            },500);
+
+            createHeartExplosion();
+
+        }
+
+    },25);
+
+}
+
+
+/* =====================================================
+   YES ANSWER
+===================================================== */
+
+function yesAnswer(){
+
+    const result =
+        document.getElementById("answerResult");
+
+    if(result){
+
+        result.innerHTML =
+            "I KNEW IT! 😭❤️ Come here! 🤗💕";
+
+    }
+
+    createHeartExplosion();
+
+}
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+function noAnswer(){
+
+    const button =
+        document.getElementById("noButton");
+
+    const result =
+        document.getElementById("answerResult");
+
+    if(button){
+
+        const x =
+            Math.floor(
+                Math.random() * 100
+            ) - 50;
+
+        const y =
+            Math.floor(
+                Math.random() * 60
+            ) - 30;
+
+        button.style.transform =
+            "translate(" + x + "px," + y + "px)";
+
+    }
+
+    if(result){
+
+        result.innerHTML =
+            "Hmm... that button seems broken. 😌😂❤️ Try again!";
+
+    }
+
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+function openLetter(element){
+
+    if(!element){
+        return;
+    }
+
+    element.classList.toggle("open");
+
+    if(
+        element.classList.contains("open")
+    ){
+
+        createHeartExplosion();
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL SURPRISE
+===================================================== */
+
+function finalSurprise(){
+
+    createHeartExplosion();
+
+    setTimeout(()=>{
+
+        if(
+            document.getElementById("finalMessage")
+        ){
+            return;
+        }
+
+        const finalMessage =
+            document.createElement("div");
+
+        finalMessage.id =
+            "finalMessage";
+
+        finalMessage.innerHTML = `
+
+            <div>
+
+                <div style="font-size:70px;">
+                    💖
+                </div>
+
+                <h1>
+                    You Found The Secret! 🥹
+                </h1>
+
+                <p>
+                    If you reached this far...
+                    <br><br>
+                    just know that you are
+                    incredibly special to me.
+                    ❤️
+                    <br><br>
+                    Now give me a hug. 🤗
+                    <br><br>
+                    And maybe a kiss too. 😘
+                </p>
+
+                <button
+                    type="button"
+                    id="closeFinalButton">
+
+                    ❤️ Close
+
+                </button>
+
+            </div>
+
+        `;
+
+        document.body.appendChild(
+            finalMessage
+        );
+
+        const closeButton =
+            document.getElementById(
+                "closeFinalButton"
+            );
+
+        if(closeButton){
+
+            closeButton.addEventListener(
+                "click",
+                closeFinalMessage
+            );
+
+            closeButton.addEventListener(
+                "touchend",
+                function(event){
+
+                    event.preventDefault();
+
+                    closeFinalMessage();
+
+                },
+                {
+                    passive:false
+                }
+            );
+
+        }
+
+        createHeartExplosion();
+
+    },500);
+
+}
+
+
+/* =====================================================
+   CLOSE FINAL
+===================================================== */
+
+function closeFinalMessage(){
+
+    const message =
+        document.getElementById(
+            "finalMessage"
+        );
+
+    if(message){
+
+        message.remove();
+
+    }
+
+}
+
+
+/* =====================================================
+   HEART EXPLOSION
+===================================================== */
+
+function createHeartExplosion(){
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💞",
+        "💘",
+        "🥰",
+        "✨",
+        "🌸",
+        "💋"
+
+    ];
+
+
+    for(
+        let i = 0;
+        i < 45;
+        i++
+    ){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "floating-heart";
+
+        heart.innerHTML =
+            hearts[
+                Math.floor(
+                    Math.random() *
+                    hearts.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+        heart.style.fontSize =
+            (15 +
+            Math.random() *
+            30) +
+            "px";
+
+        heart.style.animationDuration =
+            (3 +
+            Math.random() *
+            4) +
+            "s";
+
+        document.body.appendChild(
+            heart
+        );
+
+        setTimeout(
+            ()=>heart.remove(),
+            8000
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+function createSparkles(element){
+
+    if(!element){
+        return;
+    }
+
+    const rect =
+        element.getBoundingClientRect();
+
+    for(
+        let i = 0;
+        i < 12;
+        i++
+    ){
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className =
+            "sparkle";
+
+        sparkle.innerHTML =
+            "✨";
+
+        sparkle.style.left =
+            (
+                rect.left +
+                Math.random() *
+                rect.width
+            ) +
+            "px";
+
+        sparkle.style.top =
+            (
+                rect.top +
+                Math.random() *
+                rect.height
+            ) +
+            "px";
+
+        document.body.appendChild(
+            sparkle
+        );
+
+        setTimeout(
+            ()=>sparkle.remove(),
+            1000
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUOUS HEARTS
+===================================================== */
+
+setInterval(()=>{
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖"
+
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() *
+                hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() *
+        100 +
+        "vw";
+
+    heart.style.fontSize =
+        (14 +
+        Math.random() *
+        18) +
+        "px";
+
+    heart.style.animationDuration =
+        (6 +
+        Math.random() *
+        5) +
+        "s";
+
+    document.body.appendChild(
+        heart
+    );
+
+    setTimeout(
+        ()=>heart.remove(),
+        11000
+    );
+
+},1000);
+
+
+/* =====================================================
+   FINAL MESSAGE STYLE
+===================================================== */
+
+const finalStyle =
+document.createElement("style");
+
+finalStyle.innerHTML = `
+
+#finalMessage{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:
+        rgba(120,20,60,.88);
+
+    backdrop-filter:blur(8px);
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+
+#finalMessage > div{
+
+    width:100%;
+
+    max-width:600px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+    background:white;
+
+    padding:50px 25px;
+
+    border-radius:35px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.3);
+
+    animation:
+        finalPop .6s ease;
+
+    position:relative;
+
+    z-index:100000;
+
+}
+
+
+#finalMessage h1{
+
+    font-family:Georgia,serif;
+
+    color:#d93669;
+
+    margin:20px 0;
+
+}
+
+
+#finalMessage p{
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+#finalMessage button{
+
+    margin-top:25px;
+
+    padding:13px 28px;
+
+    min-height:48px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#e83e75;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    touch-action:manipulation;
+
+    position:relative;
+
+    z-index:100001;
+
+}
+
+
+@media(max-width:650px){
+
+    #finalMessage{
+
+        padding:12px 10px;
+
+        align-items:center;
+
+    }
+
+    #finalMessage > div{
+
+        width:100%;
+
+        max-width:400px;
+
+        max-height:90vh;
+
+        padding:32px 17px;
+
+        border-radius:25px;
+
+    }
+
+    #finalMessage h1{
+
+        font-size:28px;
+
+        line-height:1.3;
+
+    }
+
+    #finalMessage p{
+
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+    #finalMessage button{
+
+        min-height:50px;
+
+        min-width:130px;
+
+        font-size:15px;
+
+    }
+
+}
+
+
+@keyframes finalPop{
+
+    from{
+
+        transform:
+            scale(.5)
+            rotate(-5deg);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity:1;
+
+    }
+
+}
+
+`;
+
+document.head.appendChild(
+    finalStyle
+);
+
+
+/* =====================================================
+   MOBILE / DESKTOP EVENT HANDLERS
+   This makes all interactions reliable on phones.
+===================================================== */
+
+
+/* OPEN STORY */
+
+const openStoryButton =
+    document.getElementById(
+        "openStoryButton"
+    );
+
+if(openStoryButton){
+
+    openStoryButton.addEventListener(
+        "click",
+        openStory
+    );
+
+}
+
+
+/* PHOTO BOXES */
+
+document
+.querySelectorAll(
+    '[data-action="photo"]'
+)
+.forEach(frame => {
+
+    frame.addEventListener(
+        "click",
+        function(){
+
+            revealPhoto(frame);
+
+        }
+    );
+
+});
+
+
+/* REMEMBER CARDS */
+
+document
+.querySelectorAll(
+    '[data-action="remember"]'
+)
+.forEach(card => {
+
+    card.addEventListener(
+        "click",
+        function(){
+
+            openRemember(card);
+
+        }
+    );
+
+});
+
+
+/* LOVE METER BUTTON */
+
+const loveMeterButton =
+    document.getElementById(
+        "loveMeterButton"
+    );
+
+if(loveMeterButton){
+
+    loveMeterButton.addEventListener(
+        "click",
+        startLoveMeter
+    );
+
+}
+
+
+/* YES BUTTON */
+
+const yesButton =
+    document.getElementById(
+        "yesButton"
+    );
+
+if(yesButton){
+
+    yesButton.addEventListener(
+        "click",
+        yesAnswer
+    );
+
+}
+
+
+/* NO BUTTON */
+
+const noButton =
+    document.getElementById(
+        "noButton"
+    );
+
+if(noButton){
+
+    noButton.addEventListener(
+        "click",
+        noAnswer
+    );
+
+}
+
+
+/* SECRET LETTER */
+
+const envelope =
+    document.getElementById(
+        "envelope"
+    );
+
+if(envelope){
+
+    envelope.addEventListener(
+        "click",
+        function(){
+
+            openLetter(envelope);
+
+        }
+    );
+
+}
+
+
+/* FINAL SURPRISE */
+
+const finalSurpriseButton =
+    document.getElementById(
+        "finalSurpriseButton"
+    );
+
+if(finalSurpriseButton){
+
+    finalSurpriseButton.addEventListener(
+        "click",
+        finalSurprise
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
